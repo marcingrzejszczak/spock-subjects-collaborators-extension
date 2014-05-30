@@ -44,6 +44,8 @@ Below you can find an example of usage:
 package com.blogspot.toomuchcoding.spock.subjcollabs
 
 import spock.lang.Specification
+import com.blogspot.toomuchcoding.spock.subjcollabs.Collaborator
+import com.blogspot.toomuchcoding.spock.subjcollabs.Subject
 
 class ConstructorInjectionSpec extends Specification {
 
