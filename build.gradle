@@ -1,0 +1,85 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.3'
+        classpath 'com.ofg:uptodate-gradle-plugin:0.0.2'
+    }
+}
+
+apply plugin: 'bintray'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'uptodate'
+apply plugin: 'maven-publish'
+
+group = 'com.blogspot.toomuchcoding'
+version = '0.0.1-SNAPSHOT'
+description = "Spock subjects-collaborators extension"
+
+ext {
+    groovyVersion = '2.3.2'
+    spockVersion = '0.7-groovy-2.0' 
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+build.dependsOn 'uptodate'
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+    compile 'junit:junit:4.11'
+    compile "org.spockframework:spock-core:$spockVersion"
+    
+    testCompile 'cglib:cglib-nodep:3.1'
+    testCompile 'org.objenesis:objenesis:2.1'
+}
+
+task sourcesJar(type: Jar, dependsOn:classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn:javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+publishing {
+    publications {
+        code(MavenPublication) {
+            from components.java
+
+            artifact sourcesJar {
+                classifier "sources"
+            }
+
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+        }
+    }
+}
+
+bintray {
+    user = project.properties['bintrayUser']
+    key = project.properties['bintrayKey']
+    publications = ['code']
+    pkg {
+        repo = 'spock-subjects-collaborators-extension'
+        name = 'spock-subjects-collaborators-extension'
+        desc = '''Spock extension that allows you to inject Collaborators into Subjects. Bases on Mockito's @InjectMocks functionality'''
+        licenses = ['Apache-2.0']
+        labels = ['spock']
+    }
+}
+
