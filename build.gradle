@@ -15,7 +15,7 @@ apply plugin: 'uptodate'
 apply plugin: 'maven-publish'
 
 group = 'com.blogspot.toomuchcoding'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 description = "Spock subjects-collaborators extension"
 
 ext {
@@ -75,7 +75,7 @@ bintray {
     key = project.properties['bintrayKey']
     publications = ['code']
     pkg {
-        repo = 'spock-subjects-collaborators-extension'
+        repo = 'com-blogspot-toomuchcoding'
         name = 'spock-subjects-collaborators-extension'
         desc = '''Spock extension that allows you to inject Collaborators into Subjects. Bases on Mockito's @InjectMocks functionality'''
         licenses = ['Apache-2.0']

@@ -90,4 +90,49 @@ class ConstructorInjectionSpec extends Specification {
 How to add it
 ----------------------------------
 
+### For Maven:
+
+Add JCenter repository:
+
+```xml
+<repositories>
+    <repository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>central</id>
+        <name>bintray</name>
+        <url>http://jcenter.bintray.com</url>
+    </repository>
+</repositories>
+```
+
+Add dependency:
+
+```xml
+<dependency>
+      <groupId>com.blogspot.toomuchcoding</groupId>
+      <artifactId>spock-subjects-collaborators-extension</artifactId>
+      <version>0.0.1</version>
+      <scope>test</scope>
+</dependency>
+```
+
+### For Gradle:
+
+Add JCenter repository:
+
+```gradle
+repositories {
+    jcenter()
+}
+```
+
+Add dependency:
+
+```gradle
+dependencies {
+    testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:0.0.1'
+}
+```
 
