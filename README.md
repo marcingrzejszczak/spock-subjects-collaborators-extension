@@ -136,3 +136,6 @@ dependencies {
 }
 ```
 
+Current build status
+--------------------
+![Build Status](https://travis-ci.org/marcingrzejszczak/spock-subjects-collaborators-extension.svg?branch=master)
