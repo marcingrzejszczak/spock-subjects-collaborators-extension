@@ -101,8 +101,8 @@ Add JCenter repository:
             <enabled>false</enabled>
         </snapshots>
         <id>central</id>
-        <name>bintray</name>
-        <url>http://jcenter.bintray.com</url>
+        <name>toomuchcoding</name>
+        <url>http://dl.bintray.com/marcingrzejszczak/com-blogspot-toomuchcoding</url>
     </repository>
 </repositories>
 ```
@@ -124,7 +124,9 @@ Add JCenter repository:
 
 ```gradle
 repositories {
-    jcenter()
+    maven { 
+		url 'http://dl.bintray.com/marcingrzejszczak/com-blogspot-toomuchcoding' 
+    }
 }
 ```
 
