@@ -103,8 +103,8 @@ Add JCenter repository:
             <enabled>false</enabled>
         </snapshots>
         <id>central</id>
-        <name>toomuchcoding</name>
-        <url>http://dl.bintray.com/marcingrzejszczak/com-blogspot-toomuchcoding</url>
+        <name>bintray</name>
+        <url>http://jcenter.bintray.com</url>
     </repository>
 </repositories>
 ```
@@ -126,9 +126,7 @@ Add JCenter repository:
 
 ```gradle
 repositories {
-    maven { 
-		url 'http://dl.bintray.com/marcingrzejszczak/com-blogspot-toomuchcoding' 
-    }
+    jcenter()
 }
 ```
 
@@ -143,3 +141,4 @@ dependencies {
 Current build status
 --------------------
 ![Build Status](https://travis-ci.org/marcingrzejszczak/spock-subjects-collaborators-extension.svg?branch=master)
+
