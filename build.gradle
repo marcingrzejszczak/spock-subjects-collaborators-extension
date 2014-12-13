@@ -1,39 +1,34 @@
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'com.ofg.uptodate'
+apply plugin: 'maven-publish'
+
 buildscript {
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.3'
-        classpath 'com.ofg:uptodate-gradle-plugin:0.0.2'
+        classpath 'com.ofg:uptodate-gradle-plugin:1.1.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
     }
 }
 
-apply plugin: 'bintray'
-apply plugin: 'groovy'
-apply plugin: 'maven'
-apply plugin: 'uptodate'
-apply plugin: 'maven-publish'
 
 group = 'com.blogspot.toomuchcoding'
 version = '0.0.2-SNAPSHOT'
 description = "Spock subjects-collaborators extension"
 
-ext {
-    groovyVersion = '2.3.2'
-    spockVersion = '0.7-groovy-2.0' 
-}
-
 repositories {
-    mavenLocal()
-    mavenCentral()
+    jcenter()
 }
 
 build.dependsOn 'uptodate'
 
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
-    compile 'junit:junit:4.11'
-    compile "org.spockframework:spock-core:$spockVersion"
+    compile "org.codehaus.groovy:groovy-all:2.3.8"
+    compile 'junit:junit:4.12'
+    compile "org.spockframework:spock-core:0.7-groovy-2.0"
     
     testCompile 'cglib:cglib-nodep:3.1'
     testCompile 'org.objenesis:objenesis:2.1'
