@@ -23,8 +23,6 @@ repositories {
     jcenter()
 }
 
-build.dependsOn 'uptodate'
-
 dependencies {
     compile "org.codehaus.groovy:groovy-all:2.3.8"
     compile 'junit:junit:4.12'
