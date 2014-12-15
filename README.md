@@ -34,6 +34,9 @@ Field injection; collaborators will first be resolved by type, then, if there is
 Note 1: If you have fields with the same type (or same erasure), it's better to name all *@Collaborator* annotated fields with the matching fields, otherwise injection might not happen.
 Note 2: If @Subject instance wasn't initialized before and have a no-arg constructor, then it will be initialized with this constructor.
 
+version 1.0.0 allows a hideous hack that you can inject values to Subject's superclass' private properties.
+Please do not ever use it unless you're really desperate.
+
 Examples
 ----------------------------------
 
@@ -137,6 +140,10 @@ dependencies {
     testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:0.0.1'
 }
 ```
+
+Changelog
+--------------------
+[Changes are available here](CHANGELOG.md)
 
 Current build status
 --------------------
