@@ -31,6 +31,9 @@ import java.lang.reflect.Field
  *
  * Field injection; collaborators will first be resolved by type, then, if there is several property of the same type, by the match of the field name and the mock name.
  *
+ * @since 1.0.0 - allows a hideous hack that you can inject values to Subject's superclass' private properties.
+ * Please do not ever use it unless you're really desperate.
+ *
  * Note 1: If you have fields with the same type (or same erasure), it's better to name all {@link Collaborator @Collaborator} annotated fields with the matching fields, otherwise injection might not happen.
  * Note 2: If {@link Subject @Subject} instance wasn't initialized before and have a no-arg constructor, then it will be initialized with this constructor.
  */

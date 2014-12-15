@@ -1,7 +1,5 @@
 package com.blogspot.toomuchcoding.spock.subjcollabs
 
-import com.blogspot.toomuchcoding.spock.subjcollabs.Collaborator
-import com.blogspot.toomuchcoding.spock.subjcollabs.Subject
 import spock.lang.Specification
 
 class PropertiesInjectionSpec extends Specification {
