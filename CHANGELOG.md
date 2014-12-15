@@ -2,4 +2,4 @@
 -----
 New features:
 
-[#1] Inject superclass fields - now you can inject fields to your superclass
+[#1](https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/issues/1) Inject superclass fields - now you can inject fields to your superclass
