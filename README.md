@@ -1,3 +1,7 @@
+![Build Status](https://travis-ci.org/marcingrzejszczak/spock-subjects-collaborators-extension.svg?branch=master)
+[ ![Download](https://api.bintray.com/packages/marcingrzejszczak/com-blogspot-toomuchcoding/spock-subjects-collaborators-extension/images/download.svg) ](https://bintray.com/marcingrzejszczak/com-blogspot-toomuchcoding/spock-subjects-collaborators-extension/_latestVersion)
+
+
 Spock Subjects-Collaborators Extension
 ===============
 
@@ -118,7 +122,7 @@ Add dependency:
 <dependency>
       <groupId>com.blogspot.toomuchcoding</groupId>
       <artifactId>spock-subjects-collaborators-extension</artifactId>
-      <version>0.0.1</version>
+      <version>1.0.1</version>
       <scope>test</scope>
 </dependency>
 ```
@@ -137,15 +141,10 @@ Add dependency:
 
 ```gradle
 dependencies {
-    testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:0.0.1'
+    testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:1.0.1'
 }
 ```
 
 Changelog
 --------------------
 [Changes are available here](CHANGELOG.md)
-
-Current build status
---------------------
-![Build Status](https://travis-ci.org/marcingrzejszczak/spock-subjects-collaborators-extension.svg?branch=master)
-
