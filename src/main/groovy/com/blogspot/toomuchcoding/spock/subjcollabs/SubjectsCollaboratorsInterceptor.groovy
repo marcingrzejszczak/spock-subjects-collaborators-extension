@@ -53,6 +53,10 @@ class SubjectsCollaboratorsInterceptor implements IMethodInterceptor {
     public void install(MethodInfo method) {
         method.addInterceptor(this)
     }
+
+    public void install(List<IMethodInterceptor> method) {
+        method.add(this)
+    }
     
     public void add(FieldInfo fieldInfo) {
         fields.add(fieldInfo)

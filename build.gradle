@@ -21,12 +21,15 @@ description = "Spock subjects-collaborators extension"
 
 repositories {
     jcenter()
+    maven {
+        url 'http://oss.sonatype.org/content/repositories/snapshots'
+    }
 }
 
 dependencies {
     compile "org.codehaus.groovy:groovy-all:2.3.8"
     compile 'junit:junit:4.12'
-    compile "org.spockframework:spock-core:0.7-groovy-2.0"
+    compile "org.spockframework:spock-core:${project.hasProperty('spockVersion') ? project.getProperty('spockVersion') : '0.7-groovy-2.0'}"
     
     testCompile 'cglib:cglib-nodep:3.1'
     testCompile 'org.objenesis:objenesis:2.1'
