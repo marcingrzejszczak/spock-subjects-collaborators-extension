@@ -24,6 +24,9 @@ one of the *@Collaborator* annotated object's type then injection via constructo
 
 Note: If arguments can not be found, then null is passed
 
+version 1.0.2 allows you to inject collaborators into subject having a private constructor. Of course such a need
+signifies that your architecture sucks and maybe you should first refactor it instead of doing all of these aweful hacks.
+
 ###Inject via Setter
 
 Subject is instantiated and its setter methods are used to find types that can be injected. Basing on those types matching *@Collaborator* annotated objects are picked.
@@ -122,7 +125,7 @@ Add dependency:
 <dependency>
       <groupId>com.blogspot.toomuchcoding</groupId>
       <artifactId>spock-subjects-collaborators-extension</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
       <scope>test</scope>
 </dependency>
 ```
@@ -141,7 +144,7 @@ Add dependency:
 
 ```gradle
 dependencies {
-    testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:1.0.1'
+    testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:1.0.2'
 }
 ```
 

@@ -33,7 +33,7 @@ class ConstructorInjector implements Injector {
     }
 
     private Constructor findConstructorWithMaxParams(FieldInfo fieldInfo) {
-        Constructor constructor = fieldInfo.type.constructors.max(CONSTRUCTOR_SIZE_COMPARATOR)
+        Constructor constructor = fieldInfo.type.declaredConstructors.max(CONSTRUCTOR_SIZE_COMPARATOR)
         constructor.accessible = true
         return constructor
     }

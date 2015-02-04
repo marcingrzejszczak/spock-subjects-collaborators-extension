@@ -1,3 +1,9 @@
+[1.0.2](https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/tree/1.0.2)
+-----
+Bug fixes:
+
+[#4](https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/issues/4) Inject field into class with private constructor
+
 [1.0.1](https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/tree/1.0.1)
 -----
 Bug fixes:

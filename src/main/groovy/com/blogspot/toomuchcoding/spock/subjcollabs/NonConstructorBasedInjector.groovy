@@ -15,7 +15,7 @@ abstract class NonConstructorBasedInjector implements Injector {
 
     protected Object instantiateSubjectAndSetOnSpecification(Specification specInstance, FieldInfo fieldInfo) {
         final Object subject
-        Constructor constructorWithMinArgs = fieldInfo.type.constructors.min(CONSTRUCTOR_SIZE_COMPARATOR)
+        Constructor constructorWithMinArgs = fieldInfo.type.declaredConstructors.min(CONSTRUCTOR_SIZE_COMPARATOR)
         if (constructorWithMinArgs.parameterTypes.size() == 0) {
             subject = fieldInfo.type.newInstance()
         } else {
