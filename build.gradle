@@ -16,7 +16,7 @@ buildscript {
 
 
 group = 'com.blogspot.toomuchcoding'
-version = '1.0.2'
+version = '1.0.3-SNAPSHOT'
 description = "Spock subjects-collaborators extension"
 
 repositories {
