@@ -19,6 +19,8 @@ group = 'com.blogspot.toomuchcoding'
 version = '1.0.3-SNAPSHOT'
 description = "Spock subjects-collaborators extension"
 
+sourceCompatibility = 1.6
+
 repositories {
     jcenter()
     maven {
