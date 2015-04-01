@@ -6,4 +6,4 @@ jdk:
   - openjdk6
 
 script:
-- ./gradlew clean build -PspockVersion=0.7-groovy-2.0 && ./gradlew clean build -PspockVersion=1.0-groovy-2.3-SNAPSHOT
+- ./gradlew clean build -PspockVersion=0.7-groovy-2.0 && ./gradlew clean build -PspockVersion=1.0-groovy-2.3
