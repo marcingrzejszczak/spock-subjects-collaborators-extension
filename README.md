@@ -1,6 +1,6 @@
 ![Build Status](https://travis-ci.org/marcingrzejszczak/spock-subjects-collaborators-extension.svg?branch=master)
 [ ![Download](https://api.bintray.com/packages/marcingrzejszczak/com-blogspot-toomuchcoding/spock-subjects-collaborators-extension/images/download.svg) ](https://bintray.com/marcingrzejszczak/com-blogspot-toomuchcoding/spock-subjects-collaborators-extension/_latestVersion)
-
+[![Join the chat at https://gitter.im/marcingrzejszczak/spock-subjects-collaborators-extension](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/marcingrzejszczak/spock-subjects-collaborators-extension?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Spock Subjects-Collaborators Extension
 ===============
