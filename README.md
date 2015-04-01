@@ -5,6 +5,8 @@
 Spock Subjects-Collaborators Extension
 ===============
 
+[![Join the chat at https://gitter.im/marcingrzejszczak/spock-subjects-collaborators-extension](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/marcingrzejszczak/spock-subjects-collaborators-extension?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Spock subject-collaborators extension is a port of the Mockito's @InjectMocks functionality - [click here to check Mockito's docs](http://docs.mockito.googlecode.com/hg/1.9.5/org/mockito/InjectMocks.html).
 That's why parts of the following explanations are taken out from Mockito documentation.
  
