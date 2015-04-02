@@ -15,6 +15,9 @@ The main difference between the approaches is such that here in Spock you have t
 Collaborator injection to Subjects
 ----------------------------------
 
+Note that since version 1.1.0 if you instantiate your subject by yourself then the extension will honor that and try to perform any further
+ injections via setters or properties.
+
 The injection of collaborators to subjects (yes, you can annotate several objects with *@Subject* annotation) is done in the following order:
 
 ###Inject via Constructor
