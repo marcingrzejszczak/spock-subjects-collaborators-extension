@@ -34,15 +34,12 @@ class PropertyInjector extends NonConstructorBasedInjector {
     private Map getMatchingFieldsBasingOnTypeAndPropertyName(Collection<Field> injectionCandidates, List<Field> allFields) {
         Map matchingFields = [:]
         injectionCandidates.each { Field injectionCandidate ->
-            allFields.each {
-                if (it.type == injectionCandidate.type) {
-                    // if there is several property of the same type by the match of the property name and the mock name.
-                    if (matchingFields[it] && it.name.equalsIgnoreCase(injectionCandidate.name)) {
-                        matchingFields[it] = injectionCandidate
-                    } else if (!matchingFields[it]) {
-                        matchingFields[it] = injectionCandidate
-                    }
-                }
+            List<Field> matchingTypes = allFields.findAll { it.type == injectionCandidate.type }
+            Field injectionCandidateByNameAndType = matchingTypes.find { it.name.equalsIgnoreCase(injectionCandidate.name) }
+            if (injectionCandidateByNameAndType) {
+                matchingFields[injectionCandidateByNameAndType] = injectionCandidate
+            } else {
+                matchingFields = matchingFields << matchingTypes.collectEntries { [(it) : injectionCandidate] }
             }
         }
         return matchingFields

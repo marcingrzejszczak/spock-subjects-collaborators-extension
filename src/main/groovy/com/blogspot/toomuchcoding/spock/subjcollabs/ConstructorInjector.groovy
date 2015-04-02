@@ -17,6 +17,9 @@ class ConstructorInjector implements Injector {
 
     @Override
     boolean tryToInject(Collection<Field> injectionCandidates, Specification specInstance, FieldInfo fieldInfo) {
+        if (subjectIsInitialized(specInstance, fieldInfo)) {
+            return false
+        }
         try {
             Constructor constructorWithMaxParams = findConstructorWithMaxParams(fieldInfo)
             if (!atLeastOneInjectionCandidateClassExistsAsConstructorParameter(constructorWithMaxParams, injectionCandidates)) {
@@ -30,6 +33,10 @@ class ConstructorInjector implements Injector {
         catch (Exception e) {
             return false;
         }
+    }
+
+    private Object subjectIsInitialized(Specification specInstance, FieldInfo fieldInfo) {
+        specInstance[fieldInfo.name]
     }
 
     private Constructor findConstructorWithMaxParams(FieldInfo fieldInfo) {
