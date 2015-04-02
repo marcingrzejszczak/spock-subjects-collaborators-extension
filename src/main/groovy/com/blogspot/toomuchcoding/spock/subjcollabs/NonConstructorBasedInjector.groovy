@@ -15,6 +15,9 @@ abstract class NonConstructorBasedInjector implements Injector {
 
     protected Object instantiateSubjectAndSetOnSpecification(Specification specInstance, FieldInfo fieldInfo) {
         final Object subject
+        if (subjectIsInitialized(specInstance, fieldInfo)) {
+            return specInstance[fieldInfo.name]
+        }
         Constructor constructorWithMinArgs = fieldInfo.type.declaredConstructors.min(CONSTRUCTOR_SIZE_COMPARATOR)
         if (constructorWithMinArgs.parameterTypes.size() == 0) {
             subject = fieldInfo.type.newInstance()
@@ -24,5 +27,9 @@ abstract class NonConstructorBasedInjector implements Injector {
         }
         specInstance[fieldInfo.name] = subject
         return subject
+    }
+
+    private Object subjectIsInitialized(Specification specInstance, FieldInfo fieldInfo) {
+        specInstance[fieldInfo.name]
     }
 }
