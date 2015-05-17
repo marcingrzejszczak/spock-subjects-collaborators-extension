@@ -1,4 +1,3 @@
-apply plugin: 'com.jfrog.bintray'
 apply plugin: 'groovy'
 apply plugin: 'maven'
 apply plugin: 'com.ofg.uptodate'
@@ -10,7 +9,10 @@ buildscript {
     }
     dependencies {
         classpath 'com.ofg:uptodate-gradle-plugin:1.1.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
+        if (!version.contains('SNAPSHOT')) {
+            classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
+            classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.5.1"
+        }
     }
 }
 
@@ -23,61 +25,41 @@ sourceCompatibility = 1.6
 
 repositories {
     jcenter()
-    maven {
-        url 'http://oss.sonatype.org/content/repositories/snapshots'
-    }
 }
 
 dependencies {
     compile "org.codehaus.groovy:groovy-all:2.3.8"
     compile 'junit:junit:4.12'
     compile "org.spockframework:spock-core:${project.hasProperty('spockVersion') ? project.getProperty('spockVersion') : '0.7-groovy-2.0'}"
-    
+
     testCompile 'cglib:cglib-nodep:3.1'
     testCompile 'org.objenesis:objenesis:2.1'
 }
 
-task sourcesJar(type: Jar, dependsOn:classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-task javadocJar(type: Jar, dependsOn:javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives sourcesJar
-    archives javadocJar
+test {
+    maxParallelForks = Runtime.runtime.availableProcessors() / 2
 }
 
 publishing {
     publications {
         code(MavenPublication) {
             from components.java
-
-            artifact sourcesJar {
-                classifier "sources"
-            }
-
-            artifact javadocJar {
-                classifier "javadoc"
+            pom.withXml {
+                //#89 - workaround to not to have only runtime dependencies in generated pom.xml
+                //Known limitation in maven-publish - - http://forums.gradle.org/gradle/topics/maven_publish_plugin_generated_pom_making_dependency_scope_runtime#reply_14120711
+                asNode().dependencies.'*'.findAll() {
+                    it.scope.text() == 'runtime' && project.configurations.compile.allDependencies.find { dep ->
+                        dep.name == it.artifactId.text()
+                    }
+                }.each() {
+                    it.scope*.value = 'compile'
+                }
             }
         }
     }
 }
 
-bintray {
-    user = project.properties['bintrayUser']
-    key = project.properties['bintrayKey']
-    publications = ['code']
-    pkg {
-        repo = 'com-blogspot-toomuchcoding'
-        name = 'spock-subjects-collaborators-extension'
-        desc = '''Spock extension that allows you to inject Collaborators into Subjects. Bases on Mockito's @InjectMocks functionality'''
-        licenses = ['Apache-2.0']
-        labels = ['spock']
-    }
+if (!version.contains('SNAPSHOT')) {
+    apply from: "$rootDir/gradle/release.gradle"
 }
 
