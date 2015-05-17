@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/marcingrzejszczak/spock-subjects-collaborators-extension.svg?branch=master)](https://travis-ci.org/marcingrzejszczak/spock-subjects-collaborators-extension)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.blogspot.toomuchcoding/spock-subjects-collaborators-extension/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.blogspot.toomuchcoding/spock-subjects-collaborators-extension)
 [ ![Download](https://api.bintray.com/packages/marcingrzejszczak/com-blogspot-toomuchcoding/spock-subjects-collaborators-extension/images/download.svg) ](https://bintray.com/marcingrzejszczak/com-blogspot-toomuchcoding/spock-subjects-collaborators-extension/_latestVersion)
 [![Join the chat at https://gitter.im/marcingrzejszczak/spock-subjects-collaborators-extension](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/marcingrzejszczak/spock-subjects-collaborators-extension?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Google Group at https://groups.google.com/forum/?hl=pl#!forum/spock-subjects-collaborators-extension](https://img.shields.io/badge/discuss-google--group-blue.svg)](https://groups.google.com/forum/?hl=pl#!forum/spock-subjects-collaborators-extension)
@@ -106,6 +107,8 @@ class ConstructorInjectionSpec extends Specification {
 How to add it
 ----------------------------------
 
+**SINCE VERSION 1.1.0 THE EXTENSION IS AVAILABLE AT MAVEN CENTRAL!!**
+
 ### For Maven:
 
 Add JCenter repository:
@@ -122,6 +125,8 @@ Add JCenter repository:
     </repository>
 </repositories>
 ```
+
+Or use Maven Central.
 
 Add dependency:
 
@@ -141,6 +146,14 @@ Add JCenter repository:
 ```gradle
 repositories {
     jcenter()
+}
+```
+
+or Maven Central
+
+```gradle
+repositories {
+    mavenCentral()
 }
 ```
 
