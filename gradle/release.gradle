@@ -45,7 +45,7 @@ uploadArchives {
 				scm {
 					connection 'git@github.com:marcingrzejszczak/spock-subjects-collaborators-extension.git'
 					developerConnection 'git@github.com:marcingrzejszczak/spock-subjects-collaborators-extension.git'
-					url 'https://github.com/marcingrzejsczak/spock-subjects-collaborators-extension'
+					url 'https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension'
 				}
 
 				licenses {
