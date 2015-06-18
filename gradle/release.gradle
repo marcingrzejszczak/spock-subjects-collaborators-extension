@@ -85,6 +85,3 @@ bintray {
 	}
 }
 
-nexusStaging {
-	packageGroup = "com.blogspot.toomuchcoding"
-}
