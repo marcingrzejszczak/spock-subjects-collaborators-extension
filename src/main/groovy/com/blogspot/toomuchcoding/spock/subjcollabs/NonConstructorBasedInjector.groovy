@@ -19,6 +19,9 @@ abstract class NonConstructorBasedInjector implements Injector {
             return specInstance[fieldInfo.name]
         }
         Constructor constructorWithMinArgs = fieldInfo.type.declaredConstructors.min(CONSTRUCTOR_SIZE_COMPARATOR)
+        if (!constructorWithMinArgs) {
+            throw new IllegalStateException("There are no constructors available! Are you sure you're not trying to instantiate an interface?");
+        }
         if (constructorWithMinArgs.parameterTypes.size() == 0) {
             subject = fieldInfo.type.newInstance()
         } else {
