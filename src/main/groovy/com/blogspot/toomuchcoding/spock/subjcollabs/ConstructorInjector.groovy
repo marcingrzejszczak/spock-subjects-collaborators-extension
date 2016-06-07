@@ -36,7 +36,7 @@ class ConstructorInjector implements Injector {
     }
 
     private Object subjectIsInitialized(Specification specInstance, FieldInfo fieldInfo) {
-        specInstance[fieldInfo.name]
+        return specInstance[fieldInfo.name]
     }
 
     private Constructor findConstructorWithMaxParams(FieldInfo fieldInfo) {

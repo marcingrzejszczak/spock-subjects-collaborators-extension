@@ -12,6 +12,11 @@ import java.lang.reflect.Constructor
 abstract class NonConstructorBasedInjector implements Injector {
 
     protected static final ConstructorSizeComparator CONSTRUCTOR_SIZE_COMPARATOR = new ConstructorSizeComparator()
+    protected final FieldRetriever fieldRetriever
+
+    NonConstructorBasedInjector(FieldRetriever fieldRetriever) {
+        this.fieldRetriever = fieldRetriever
+    }
 
     protected Object instantiateSubjectAndSetOnSpecification(Specification specInstance, FieldInfo fieldInfo) {
         final Object subject
@@ -33,6 +38,6 @@ abstract class NonConstructorBasedInjector implements Injector {
     }
 
     private Object subjectIsInitialized(Specification specInstance, FieldInfo fieldInfo) {
-        specInstance[fieldInfo.name]
+        return specInstance[fieldInfo.name]
     }
 }

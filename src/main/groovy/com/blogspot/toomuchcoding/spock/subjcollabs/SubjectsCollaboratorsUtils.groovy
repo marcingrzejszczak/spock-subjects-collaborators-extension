@@ -22,4 +22,16 @@ class SubjectsCollaboratorsUtils {
             }
         }
     }
+
+    public static boolean isFieldSet(Field field, Object target) {
+        try {
+            boolean accessible = field.accessible
+            field.accessible = true
+            boolean fieldSet = (field.get(target) != null)
+            field.accessible = accessible
+            return fieldSet
+        } catch (Exception e) {
+            return false
+        }
+    }
 }

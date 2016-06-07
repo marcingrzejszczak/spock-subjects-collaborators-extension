@@ -41,9 +41,10 @@ class SubjectsCollaboratorsInterceptor implements IMethodInterceptor {
 
     private final List<FieldInfo> fields = []
     private final List<Injector> injectors
+    private final FieldRetriever fieldRetriever = new FieldRetriever()
 
     SubjectsCollaboratorsInterceptor() {
-        this.injectors = [new ConstructorInjector(), new SetterInjector(), new PropertyInjector()]
+        this.injectors = [new ConstructorInjector(), new SetterInjector(fieldRetriever), new PropertyInjector(fieldRetriever)]
     }
 
     protected SubjectsCollaboratorsInterceptor(List<Injector> injectors) {
@@ -71,7 +72,7 @@ class SubjectsCollaboratorsInterceptor implements IMethodInterceptor {
     }
 
     private void tryToInjectCandidatesIntoSubject(Collection<Field> injectionCandidates, Specification specInstance, FieldInfo fieldInfo) {
-        injectors.find { it.tryToInject(injectionCandidates, specInstance, fieldInfo) }
+        injectors.each { it.tryToInject(injectionCandidates, specInstance, fieldInfo) }
     }
 
     private Collection<Field> getInjectionCandidates(Specification specInstance) {
