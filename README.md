@@ -134,7 +134,7 @@ Add dependency:
 <dependency>
       <groupId>com.blogspot.toomuchcoding</groupId>
       <artifactId>spock-subjects-collaborators-extension</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.1</version>
       <scope>test</scope>
 </dependency>
 ```
@@ -161,7 +161,7 @@ Add dependency:
 
 ```gradle
 dependencies {
-    testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:1.1.0'
+    testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:1.2.1'
 }
 ```
 
