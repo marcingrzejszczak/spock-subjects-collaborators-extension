@@ -11,6 +11,10 @@ class SetterInjector extends NonConstructorBasedInjector {
 
     private static final List<String> SETTERS_TO_IGNORE = ["setMetaClass"]
 
+    SetterInjector(FieldRetriever fieldRetriever) {
+        super(fieldRetriever)
+    }
+
     @Override
     boolean tryToInject(Collection<Field> injectionCandidates, Specification specInstance, FieldInfo fieldInfo) {
         // Property setter injection; mocks will first be resolved by type, then, if there is several property of the same type
@@ -21,8 +25,11 @@ class SetterInjector extends NonConstructorBasedInjector {
             if (matchingSetters.isEmpty()) {
                 return false
             }
+            Map<Field, Field> fields = fieldRetriever.getAllUnsetFields(injectionCandidates, fieldInfo, subject)
             matchingSetters.each { Method method, Field injectionCandidate ->
-                method.invoke(subject, specInstance[injectionCandidate.name])
+                if (fields.containsValue(injectionCandidate)) {
+                    method.invoke(subject, specInstance[injectionCandidate.name])
+                }
             }
             return true
         } catch (Exception e) {
@@ -30,7 +37,7 @@ class SetterInjector extends NonConstructorBasedInjector {
         }
     }
 
-    private Map getMatchingSettersBasingOnTypeAndPropertyName(Collection<Field> injectionCandidates, List<Method> setters) {
+    private Map<Method, Field> getMatchingSettersBasingOnTypeAndPropertyName(Collection<Field> injectionCandidates, List<Method> setters) {
         Map matchingSetters = [:]
         injectionCandidates.each { Field injectionCandidate ->
             setters.each {
@@ -51,10 +58,6 @@ class SetterInjector extends NonConstructorBasedInjector {
         return fieldInfo.type.methods.findAll {
             return it.name.startsWith("set") && !SETTERS_TO_IGNORE.contains(it.name)
         }
-    }
-
-    private String getFieldNameFromSetter(String setterName) {
-        return "${setterName.getAt(3).toLowerCase()}${setterName.substring(4)}"
     }
 
 }
