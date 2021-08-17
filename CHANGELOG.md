@@ -1,3 +1,5 @@
+[2.0.0](Migrated to Spock 2 and Groovy 3)
+
 [1.1.0](https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/tree/1.1.0)
 -----
 [Changes](https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/pulls?q=is%3Apr+is%3Aclosed+milestone%3A1.1.0)

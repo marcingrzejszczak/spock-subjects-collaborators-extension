@@ -1,5 +1,0 @@
--------------------------------------------------------------------------------
-Test set: SettersInjectionWithCollaboratorsAndNonMatchingConstructorSpec
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in SettersInjectionWithCollaboratorsAndNonMatchingConstructorSpec
-should inject collaborator into subject via setters ignoring nonmatching constructor  Time elapsed: 0.004 s

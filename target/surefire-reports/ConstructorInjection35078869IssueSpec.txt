@@ -1,5 +1,0 @@
--------------------------------------------------------------------------------
-Test set: ConstructorInjection35078869IssueSpec
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in ConstructorInjection35078869IssueSpec
-should delete a user  Time elapsed: 0.013 s
