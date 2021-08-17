@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Test set: ConstructorInjectionSeveralConstructorsOneCollaboratorSpec
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in ConstructorInjectionSeveralConstructorsOneCollaboratorSpec
+should inject collaborator into subject  Time elapsed: 0.004 s

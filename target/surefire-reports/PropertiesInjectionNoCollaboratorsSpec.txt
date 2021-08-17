@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Test set: PropertiesInjectionNoCollaboratorsSpec
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in PropertiesInjectionNoCollaboratorsSpec
+should inject fields into subject via properties with no collaborators  Time elapsed: 0.005 s

@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Test set: SettersInjectionSpec
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in SettersInjectionSpec
+should inject collaborator into subject via setters  Time elapsed: 0.01 s

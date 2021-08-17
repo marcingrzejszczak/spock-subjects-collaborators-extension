@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Test set: PropertiesInjectionNoMatchingSetterAndConstructorWithoutCollaboratorsSpec
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s - in PropertiesInjectionNoMatchingSetterAndConstructorWithoutCollaboratorsSpec
+should inject collaborator into subject via properties without collaborators  Time elapsed: 0.047 s

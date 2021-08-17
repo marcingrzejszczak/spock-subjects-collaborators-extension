@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Test set: PropertiesInjectionAfterConstructorCallSpec
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 s - in PropertiesInjectionAfterConstructorCallSpec
+should inject collaborator into subject via properties without instantiating the subject  Time elapsed: 0.09 s
