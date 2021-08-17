@@ -92,6 +92,18 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-groovydoc</artifactId>
+			<version>${groovy.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-templates</artifactId>
+			<version>${groovy.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
@@ -109,12 +121,13 @@
 			<version>${spock.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency> <!-- enables mocking of classes (in addition to interfaces) -->
+		<dependency>
+			<!-- enables mocking of classes (in addition to interfaces) -->
 			<groupId>net.bytebuddy</groupId>
 			<artifactId>byte-buddy</artifactId>
 			<version>${byte-buddy.version}</version>
 			<scope>test</scope>
-		  </dependency>
+		</dependency>
 		<dependency>
 			<groupId>org.objenesis</groupId>
 			<artifactId>objenesis</artifactId>
@@ -174,12 +187,31 @@
 						<goals>
 							<goal>addSources</goal>
 							<goal>compile</goal>
+							<goal>groovydoc-jar</goal>
 							<goal>addTestSources</goal>
 							<goal>compileTests</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-file</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFile>target/${project.artifactId}-${project.version}-groovydoc.jar</sourceFile>
+                            <destinationFile>target/${project.artifactId}-${project.version}-javadoc.jar</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
