@@ -9,26 +9,50 @@
 	<url>https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension</url>
 	<licenses>
 		<license>
-			<name>The Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+			<comments>
+				Copyright 2014-2015 the original author or authors.
+
+				Licensed under the Apache License, Version 2.0 (the "License");
+				you may not use this file except in compliance with the License.
+				You may obtain a copy of the License at
+
+				https://www.apache.org/licenses/LICENSE-2.0
+
+				Unless required by applicable law or agreed to in writing, software
+				distributed under the License is distributed on an "AS IS" BASIS,
+				WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+				implied.
+
+				See the License for the specific language governing permissions and
+				limitations under the License.
+			</comments>
 		</license>
 	</licenses>
+	<scm>
+		<url>https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension</url>
+		<connection>scm:git:git://github.com/marcingrzejszczak/spock-subjects-collaborators-extension.git
+		</connection>
+		<developerConnection>
+			scm:git:ssh://git@github.com/marcingrzejszczak/spock-subjects-collaborators-extension.git
+		</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 	<developers>
 		<developer>
-			<id>marcingrzejszczak</id>
+			<id>mgrzejszczak</id>
 			<name>Marcin Grzejszczak</name>
-			<email>marcin ATT grzejszczak DOTT pl</email>
+			<email>marcin at grzejszczak.pl</email>
+			<roles>
+				<role>lead</role>
+			</roles>
 		</developer>
 	</developers>
-	<scm>
-		<connection>git@github.com:marcingrzejszczak/spock-subjects-collaborators-extension.git</connection>
-		<developerConnection>git@github.com:marcingrzejszczak/spock-subjects-collaborators-extension.git</developerConnection>
-		<url>https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension</url>
-	</scm>
 	<distributionManagement>
 		<downloadUrl>https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension</downloadUrl>
 		<site>
-			<id>spock-subjects-collaborators-extension-docs</id>
+			<id>jsonassert-docs</id>
 			<url>
 				https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension
 			</url>
