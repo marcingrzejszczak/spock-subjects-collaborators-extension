@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.blogspot.toomuchcoding</groupId>
 	<artifactId>spock-subjects-collaborators-extension</artifactId>
-	<version>2.0.0-SNAPSHOT</version>
+	<version>2.0.0</version>
 	<name>spock-subjects-collaborators-extension</name>
 	<description>Spock extension that allows you to inject Collaborators into Subjects. Bases on Mockito's @InjectMocks functionality</description>
 	<url>https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension</url>
@@ -37,7 +37,8 @@
 		<developerConnection>
 			scm:git:ssh://git@github.com/marcingrzejszczak/spock-subjects-collaborators-extension.git
 		</developerConnection>
-	</scm>
+	  <tag>v2.0.0</tag>
+  </scm>
 	<developers>
 		<developer>
 			<id>mgrzejszczak</id>
