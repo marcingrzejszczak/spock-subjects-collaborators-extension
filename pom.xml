@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.blogspot.toomuchcoding</groupId>
 	<artifactId>spock-subjects-collaborators-extension</artifactId>
-	<version>2.0.0</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<name>spock-subjects-collaborators-extension</name>
 	<description>Spock extension that allows you to inject Collaborators into Subjects. Bases on Mockito's @InjectMocks functionality</description>
 	<url>https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension</url>
@@ -37,7 +37,6 @@
 		<developerConnection>
 			scm:git:ssh://git@github.com/marcingrzejszczak/spock-subjects-collaborators-extension.git
 		</developerConnection>
-		<tag>v2.0.0</tag>
 	</scm>
 	<developers>
 		<developer>
@@ -82,6 +81,7 @@
 		<maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
 		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
 		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+		<build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -212,6 +212,29 @@
                     </execution>
                 </executions>
             </plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>${build-helper-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>attach-artifacts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>target/${project.artifactId}-${project.version}-javadoc.jar</file>
+									<type>jar</type>
+									<classifier>javadoc</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
