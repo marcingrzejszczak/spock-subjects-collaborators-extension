@@ -75,7 +75,6 @@
 		<spock.version>2.0-groovy-2.5</spock.version>
 		<objenesis.version>3.2</objenesis.version>
 		<byte-buddy.version>1.11.0</byte-buddy.version>
-		<junit.version>4.13.1</junit.version>
 
 		<gmavenplus-plugin.version>1.12.1</gmavenplus-plugin.version>
 		<maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
@@ -93,34 +92,10 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-groovydoc</artifactId>
-			<version>${groovy.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-templates</artifactId>
-			<version>${groovy.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-core</artifactId>
 			<version>${spock.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.spockframework</groupId>
-			<artifactId>spock-junit4</artifactId>
-			<version>${spock.version}</version>
-			<scope>test</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<!-- enables mocking of classes (in addition to interfaces) -->
@@ -183,6 +158,16 @@
 				<groupId>org.codehaus.gmavenplus</groupId>
 				<artifactId>gmavenplus-plugin</artifactId>
 				<version>${gmavenplus-plugin.version}</version>
+				<configuration>
+					<includeClasspath>PROJECT_AND_PLUGIN</includeClasspath>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.groovy</groupId>
+						<artifactId>groovy-groovydoc</artifactId>
+						<version>${groovy.version}</version>
+					</dependency>
+				</dependencies>
 				<executions>
 					<execution>
 						<goals>
