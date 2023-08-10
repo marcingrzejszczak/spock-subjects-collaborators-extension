@@ -52,7 +52,7 @@
 	<distributionManagement>
 		<downloadUrl>https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension</downloadUrl>
 		<site>
-			<id>jsonassert-docs</id>
+			<id>spock-subjects-collaborator-docs</id>
 			<url>
 				https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension
 			</url>
@@ -60,7 +60,7 @@
 		<repository>
 			<name>Nexus Release Repository</name>
 			<id>sonatype-nexus-staging</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
 
