@@ -50,16 +50,12 @@
 		</developer>
 	</developers>
 	<distributionManagement>
-		<downloadUrl>https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension</downloadUrl>
-		<site>
-			<id>jsonassert-docs</id>
-			<url>
-				https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension
-			</url>
-		</site>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
 		<repository>
-			<name>Nexus Release Repository</name>
-			<id>sonatype-nexus-staging</id>
+			<id>ossrh</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
@@ -71,17 +67,17 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 
-		<groovy.version>2.5.21</groovy.version>
-		<spock.version>2.0-groovy-2.5</spock.version>
-		<objenesis.version>3.2</objenesis.version>
-		<byte-buddy.version>1.11.0</byte-buddy.version>
+		<groovy.version>2.5.23</groovy.version>
+		<spock.version>2.3-groovy-2.5</spock.version>
+		<objenesis.version>3.3</objenesis.version>
+		<byte-buddy.version>1.14.5</byte-buddy.version>
 
-		<gmavenplus-plugin.version>1.12.1</gmavenplus-plugin.version>
-		<maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
-		<maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
-		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+		<gmavenplus-plugin.version>2.1.0</gmavenplus-plugin.version>
+		<maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+		<maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+		<maven-source-plugin.version>3.3.0</maven-source-plugin.version>
 		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-		<build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
+		<build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -251,6 +247,17 @@
 								</goals>
 							</execution>
 						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.7</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
